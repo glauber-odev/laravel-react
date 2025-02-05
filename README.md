@@ -1,66 +1,98 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Projeto Bootcamp Laravel + React
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Este é um projeto desenvolvido durante o bootcamp de desenvolvimento, que integra o **Laravel** (framework PHP) como back-end e **React** (biblioteca JavaScript) como front-end. O objetivo é criar uma aplicação web moderna e escalável com o uso de tecnologias populares no desenvolvimento full-stack.
 
-## About Laravel
+## Tecnologias Utilizadas
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Back-end:** Laravel (PHP)
+- **Front-end:** React (JavaScript)
+- **Banco de Dados:** MySQL (ou outro banco relacional)
+- **API:** Laravel API RESTful
+- **Autenticação:** JWT (JSON Web Tokens)
+- **Gerenciamento de Pacotes:** Composer (para PHP), npm (para JavaScript)
+- **Ferramentas de Desenvolvimento:** Visual Studio Code, Postman (para testar a API), Git e GitHub
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Funcionalidades
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Autenticação de usuário:** Login e registro de usuários com JWT.
+- **CRUD de itens:** Operações básicas de Create, Read, Update, Delete para gerenciar dados.
+- **Integração entre back-end e front-end:** Consumo da API RESTful do Laravel no React usando Axios.
+- **Interface interativa:** Criação de uma interface de usuário com React para interagir com os dados do servidor.
+- **Validação de dados:** Validação de entradas no front-end (React) e back-end (Laravel).
+- **Respostas dinâmicas:** Exibição de mensagens de sucesso e erro baseadas na interação do usuário.
 
-## Learning Laravel
+## Instalação
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Pré-requisitos
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- **PHP** (>= 7.3)
+- **Composer** (para gerenciamento de dependências PHP)
+- **Node.js** (>= 14.0)
+- **npm** (para gerenciamento de pacotes JavaScript)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Passos para o Back-end (Laravel)
 
-## Laravel Sponsors
+1. Clone este repositório:
+    ```bash
+    git clone https://github.com/seu-usuario/projeto-laravel-react.git
+    ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+2. Entre na pasta do back-end:
+    ```bash
+    cd projeto-laravel-react/backend
+    ```
 
-### Premium Partners
+3. Instale as dependências PHP usando o Composer:
+    ```bash
+    composer install
+    ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+4. Crie o arquivo `.env` com base no arquivo `.env.example`:
+    ```bash
+    cp .env.example .env
+    ```
 
-## Contributing
+5. Gere a chave de aplicativo Laravel:
+    ```bash
+    php artisan key:generate
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+6. Configure o banco de dados no arquivo `.env`.
 
-## Code of Conduct
+7. Rode as migrações e seeders:
+    ```bash
+    php artisan migrate --seed
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+8. Inicie o servidor de desenvolvimento:
+    ```bash
+    php artisan serve
+    ```
 
-## Security Vulnerabilities
+Agora o back-end estará rodando em `http://localhost:8000`.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Passos para o Front-end (React)
 
-## License
+1. Vá para a pasta do front-end:
+    ```bash
+    cd ../frontend
+    ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+2. Instale as dependências JavaScript usando o npm:
+    ```bash
+    npm install
+    ```
+
+3. Inicie o servidor de desenvolvimento do React:
+    ```bash
+    npm start
+    ```
+
+Agora o front-end estará rodando em `http://localhost:3000`.
+
+### Configuração da API
+
+No arquivo `.env` do front-end, defina o URL da API do Laravel:
+
+```env
+REACT_APP_API_URL=http://localhost:8000/api
