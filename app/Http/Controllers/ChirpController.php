@@ -6,6 +6,7 @@ use App\Models\Chirp;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -64,7 +65,7 @@ class ChirpController extends Controller
      */
     public function update(Request $request, Chirp $chirp) : RedirectResponse
     {
-        // Gate::authorize('update', $chirp);
+        Gate::authorize('update', $chirp);
 
         $validated = $request->validate([
             'message' => 'required|string|max:255'
@@ -78,8 +79,12 @@ class ChirpController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Chirp $chirp)
+    public function destroy(Chirp $chirp) : RedirectResponse
     {
-        //
+        Gate::authorize('delete', $chirp);
+
+        $chirp->delete();
+
+        return redirect(route('chirps.index'));
     }
 }
