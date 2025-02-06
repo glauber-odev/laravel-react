@@ -5,7 +5,7 @@ import Chirp from '@/components/Chirp';
 import PrimaryButton from '@/Components/PrimaryButton';
 import { useForm, Head } from '@inertiajs/react';
 
-export default function Index({ auth, chirps }) {
+export default function Index({ chirps }) {
     const { data, setData, post, processing, reset, errors } = useForm({
         message: '',
     });

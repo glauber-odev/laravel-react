@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Chirp;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response as HttpResponse;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
@@ -29,6 +30,17 @@ class ChirpController extends Controller
     public function create()
     {
         //
+    }
+
+
+    public function teste()
+    {
+        return 'Olá mundo';
+    }
+
+    public function teste2()
+    {
+        return 'Hello world!';
     }
 
     /**
